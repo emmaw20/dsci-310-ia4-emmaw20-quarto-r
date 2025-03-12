@@ -10,6 +10,10 @@ format:
         toc: true
         toc-location: left 
         toc-title: Contents
+    pdf:
+        latex-engine: xelatex
+        toc: true
+        toc-location: left
 bibliography: references.bib
 editor: source
 --- 
