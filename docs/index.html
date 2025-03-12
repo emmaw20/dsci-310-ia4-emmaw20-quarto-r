@@ -3,12 +3,19 @@ title: "DSCI 310: Historical Horse Population in Canada"
 author: "Tiffany Timbers & Jordan Bourak"
 execute:
     echo: false 
+    include: true 
+    eval: true
 format: 
     html: 
         toc: true
         toc-location: left 
-editor: source
+        toc-title: Contents
+    pdf:
+        latex-engine: xelatex
+        toc: true
+        toc-location: left
 bibliography: references.bib
+editor: source
 --- 
 
 ```{r}
@@ -49,12 +56,13 @@ to further support this hypothesis.
 
 Suppose we were interested in looking in more closely at the province 
 with the highest spread (in terms of standard deviation) of horse populations. 
-We present the standard deviations in @tbl-horses-sd.
+We present the standard deviations in @tbl-horses.
 
 
 ```{r}
-#| label: tbl-horses-sd
-#| cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.
+#| echo: false
+#| label: tbl-horses
+#| tbl-cap: Standard deviation of historical (1906-1972) horse populations for each Canadian province.
 horses_sd_table <- read_csv("../results/horses_sd.csv")
 largest_sd <- horses_sd_table$Province[1]
 knitr::kable(horses_sd_table)
@@ -64,11 +72,12 @@ Note that we define standard deviation (of a sample) as
 
 $$s = \sqrt{\frac{\sum_{i=1}^N (x_i - \overline{x})^2}{N-1} }$$
 
-Additionally, note that in @tbl-horses-sd we consider the sample standard deviation of the number of horses during the same time span as @fig-horses.
-
-![Horse populations for the province with the largest standard deviation](../results/horse_pop_plot_largest_sd.png){#fig-horses_largest}{width = 65%}
+Additionally, note that in @tbl-horses we consider the sample standard deviation of the number of horses during the same time span as @fig-horses.
 
 
-In @fig-horses_largest we zoom in and look at the province of `{r} largest_sd`, which had the largest spread of values in terms of standard deviation.
+![Horse populations for the province with the largest standard deviation](../results/horse_pop_plot_largest_sd.png){#fig-prov out.width="65%" fig.cap="Horse populations for the province with the largest standard deviation."}
+
+
+In @fig-prov  we zoom in and look at the province of `{r} largest_sd`, which had the largest spread of values in terms of standard deviation.
 
 ## References
