@@ -7,7 +7,7 @@ format:
     html: 
         toc: true
         toc-location: left 
-bibliography: reports/references.bib
+bibliography: references.bib
 editor: source
 --- 
 
