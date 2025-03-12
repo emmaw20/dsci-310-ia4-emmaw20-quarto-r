@@ -9,6 +9,7 @@ format:
     html: 
         toc: true
         toc-location: left 
+        toc-title: Contents
 bibliography: references.bib
 editor: source
 --- 
